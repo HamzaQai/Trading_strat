@@ -1,19 +1,25 @@
 """Quick test of Oanda API connection."""
 
 import sys
+import yaml
 from data.oanda_client import OandaClient
 from utils.logger import setup_logger
 
 # Setup logger
 logger = setup_logger("INFO")
 
+# Load config
+with open('config/config.yaml', 'r') as f:
+    config = yaml.safe_load(f)
+
 try:
     # Initialize client
     logger.info("Initializing Oanda client...")
+    oanda_config = config['oanda']
     client = OandaClient(
-        api_key="237c7da892c54323dde432d6156fd145-7350df83b89094ba631ffea0377a4a19",
-        account_id="AUTO",
-        environment="practice"
+        api_key=oanda_config['api_key'],
+        account_id=oanda_config['account_id'],
+        environment=oanda_config['environment']
     )
 
     logger.info(f"✓ Connected successfully! Account ID: {client.account_id}")

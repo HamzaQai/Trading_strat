@@ -1,14 +1,14 @@
 # API Oanda
 oanda:
-  api_key: "237c7da892c54323dde432d6156fd145-7350df83b89094ba631ffea0377a4a19"
-  account_id: "AUTO"  # Récupéré automatiquement
+  api_key: "198854ba4998ff33bdd2883fc4cba850-19bd4901362620fb933a0c268786e9e2"
+  account_id: "101-004-16051716-001"
   environment: "practice"  # ou "live"
   base_url: "https://api-fxpractice.oanda.com"
 
 # Backtest parameters
 backtest:
-  start_date: "2025-01-01"
-  end_date: "2025-10-25"  # Aujourd'hui
+  start_date: "2024-06-01"
+  end_date: "2024-10-25"  # Période avec données disponibles
   initial_capital: 100000
   risk_per_trade: 0.01  # 1%
   slippage_pips: 1
